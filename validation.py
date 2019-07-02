@@ -47,6 +47,9 @@ def val_epoch(epoch, data_loader, model, criterion, opt, logger):
                   loss=losses,
                   acc=accuracies))
 
-    logger.log({'epoch': epoch, 'loss': losses.avg, 'acc': accuracies.avg})
+    losses_val_str = '{loss.avg:.4f}'.format(loss=losses)
+    acc_val_str = '{acc.avg:.3f}'.format(acc=accuracies)
+
+    logger.log({'epoch': epoch, 'loss': losses_val_str, 'acc': acc_val_str})
 
     return losses.avg
