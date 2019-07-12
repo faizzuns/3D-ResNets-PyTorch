@@ -89,7 +89,7 @@ class ResNeXt(nn.Module):
                  sample_duration,
                  shortcut_type='B',
                  cardinality=32,
-                 num_classes=400):
+                 num_classes=4):
         self.inplanes = 64
         super(ResNeXt, self).__init__()
         self.conv1 = nn.Conv3d(
